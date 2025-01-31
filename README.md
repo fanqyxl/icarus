@@ -1,80 +1,79 @@
-# Icarus
+# ICARUS
+An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.  
 
-**Unenroll Devices with Device Managment Interception Using a Proxy and CA**
+> [!IMPORTANT]
+> DO NOT USE ANY PUBLIC IP ADDRESSES FOR ICARUS AS A PROXY, YOU WILL RISK YOUR DATA and YOU WILL BE REMOTELY COMPROMISED.<br><br>
+> ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.<br><br>
+> ONLY SELF HOST ICARUS, NEVER USE A PUBLIC SERVER!
 
-**IMPORTANT INFORMATION BEFORE YOU START**
+## New configs?
+"New configs" have rolled keys. We are testing the compatibility of these new keys for interception.
 
-> PLEASE DO NOT USE PUBLIC PROXIES / IP ADDRESSES FOR iCARUS
-> ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS CAN BE INSTALLING EXTENSIONS, SPYING, USING YOUR CAMERA, CHROME REMOTE DESKTOP, GET YOUR PASSWORDS, ETC. ONLY USE SELF HOSTED PROXIES.
+## Setup and installation instructions
+Clone the repo with ``git clone --recursive https://github.com/MunyDev/icarus/`` and change directory to it.
 
-## WHAT ARE NEW CONFIGS?
-"New Configs" have Rolled Keys. The Compatibility for Interception is Still Being Tested On These Keys.
-
-## BUILDING IT YOURSELF
-**PLEASE ONLY USE LINUX. WSL IS UNSUPPORTED AS OF NOW!**
-
-Clone the repo using ``git clone --recursive https://github.com/MunyDev/icarus/``
-
-Run ``cd ~/icarus`` (or where u saved the files)
-
-Setup The Environment: 
-
-(Make sure you have python3, python3-venv, protobuf, and google-chrome installed beforehand)
+Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
 - `make setup-venv`
 - `make enter-venv`
 - `make setup-python`
 - `make build-packed-data`
 
-
-**BEFORE CONTINUING OPEN CHROME ON THE SAME DEVICE YOU ARE BUILDING ON**
-
-- `Go to chrome://components`
-- `Press Control + F`
-- `Search for PKIMetadata`
-- `Once found, click check for updates`
-- `Make sure that is is up to date and the version is below 2000`
-
-**ONCE DONE RUN:**
-
+Before continuing, open Chrome on your build machine and go to chrome://components. Press CTRL + F and search for "PKIMetadata". Once you find it, press "Check for Updates". Make sure it says up-to-date before continuing (and that the version is below 2000.)
+  
 - `bash get_original_data.sh`
 - `bash make_out.sh myCA.der`
 
-**After doing this the output directory (from here on reffered to as PKIMetadata) will be generated, which is the custom Certificate Authority.**
+After doing this the output directory (from here on reffered to as PKIMetadata) will be generated, which is the custom Certificate Authority.
 
-Now, modify the shim with the generated PKIMetadata:
+Now, to modify the shim with the generated PKIMetadata:
 
 - `bash modify.sh <shim path>`
 
-Now flash the shim into a USB using rufus or Chromebook Recovery Utility. Boot the shim in dev mode, and ICARUS will attempt to modify your stateful partition.
+Now boot the shim, and ICARUS will attempt to modify your stateful partition.
 
-## SERVER SETUP
-
+### Server setup
 Requirements: npm, node  
-
-Cd into the directory where your Icarus files are saved. Then run `make start-server` to start your proxy, then continue with the instructions below.
+Run `make start-server` to start your proxy, then continue with the instructions below.
 
 Do not use WSL to host a server!
 
+## Setup and installation instructions, continued
 Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
 
-- Set proxy settings to manual.
+- Set proxy settings to manual
 - Set HTTPS IP to the IP you used to host the proxy server. 
 - Resume setup and your device will unenroll. 
 
-## USING PREBUILTS
-Requirments:
-A USB or Micro SD card.
-A personal laptop or pc to flash the image onto your USB.
-Something to run the server on.
+## Using Prebuilts
+Get a board specific prebuilt from:
+- [Archimax's Host (not uploaded yet)](https://dl.archima.xyz/)
+- [Darkn's Host](dl.darkn.bio)
+- [Fanqyxl's Host](https://dl.fanqyxl.net)
 
-- Go to https://dl.darkn.bio/Icarus
-- Grab a shim for your board
-- Flash it onto your USB using CRU or Rufus
-- Once flashed, get your chromebook.
-- Esc Refresh Power, Control D, Enter, then Esc Refresh Power again, Plug In your USB, and let Icarus modify your stateful partition.
-- Once done follow Server Setup instructions
+Flash it using [CRU](https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en), [Rufus](https://rufus.ie), or [Balena Etcher](https://etcher.balena.io/) onto your USB.
 
+Get your chromebook and boot the shim:
+- Esc + Refresh + Power
+- Control + D
+- Enter Dev Mode (regardless of whether its blocked or not)
+- Esc + Refresh + Power again and plug in the USB
+
+Follow the instructions to create a server.
+
+## Post Unenroll
+Many people have been getting re-enrolled after a reboot or powerwash. Until https://github.com/MunyDev/icarus/pull/15 gets merged here is what you should do if you want to enable dev mode or powerwash.
+- Build yourself a shim or get yourself a prebuilt from
+- [Archimax's Host (not uploaded yet)](https://dl.archima.xyz/)
+- [Darkn's Host](dl.darkn.bio)
+- [Fanqyxl's Host](https://dl.fanqyxl.net)
+- Flash it onto your USB.
+- Boot into sh1mmer and click "deprovision device"
+- Reboot your chromebook and enable dev mode.
+- Once in the OOBE enter VT2 by Clicking Ctrl + Alt + --->
+- Run `tpm_manager_client take_ownership`
+- And `cryptohome --action=remove_firmware_management_parameters`
+- Now you can continue setting up your chromebook normally.
 ## Troubleshooting
 
 <details>
