@@ -64,7 +64,7 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 </details>
 
 ## New Credits
-- [kxtzownsu](https://github.com/kxtzownsu) - maintaining this fork :D
+- [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys, maintaining this fork :D
 
 ## Original Credits
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
