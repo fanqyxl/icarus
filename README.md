@@ -10,7 +10,7 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 "New configs" have rolled keys. We are testing the compatibility of these new keys for interception.
 
 ## Setup and installation instructions
-Clone the repo with ``git clone --recursive https://github.com/MunyDev/icarus/`` and change directory to it.
+Clone the repo with ``git clone --recursive https://git.kxtz.dev/kxtzownsu/icarus/` and change directory to it.
 
 Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
