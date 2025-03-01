@@ -1,4 +1,4 @@
 [submodule "httpmitm"]
 	path = httpmitm
-	url = https://github.com/MunyDev/httpmitm
+	url = https://git.kxtz.dev/kxtzownsu/httpmith.git
 	branch = main
