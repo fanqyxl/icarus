@@ -6,9 +6,6 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 > ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.<br><br>
 > ONLY SELF HOST ICARUS, NEVER USE A PUBLIC SERVER!
 
-## New configs?
-"New configs" have rolled keys. We are testing the compatibility of these new keys for interception.
-
 ## Setup and installation instructions
 Clone the repo with ``git clone --recursive https://git.kxtz.dev/kxtzownsu/icarus/` and change directory to it.
 
@@ -58,6 +55,12 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
   
   - Make sure your device and the server are connected to the same network
   - If that didn't work, powerwash your device and re-run the modified shim, and keep the server running.
+</details>
+
+<details>
+  <summary>make_out.sh is prompting me for a password!</summary>
+
+  The password is 'icarus' without quotes.
 </details>
 
 ## Credits
