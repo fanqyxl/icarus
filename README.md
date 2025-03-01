@@ -1,4 +1,4 @@
-# ICARUS
+# Icarus
 An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.  
 
 > [!IMPORTANT]
@@ -27,7 +27,7 @@ Now, to modify the shim with the generated PKIMetadata:
 
 - `bash modify.sh <shim path>`
 
-Now boot the shim, and ICARUS will attempt to modify your stateful partition.
+Now boot the shim, and Icarus will attempt to modify your stateful partition.
 
 ### Server setup
 Requirements: npm, node  
@@ -63,7 +63,10 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
   The password is 'icarus' without quotes.
 </details>
 
-## Credits
+## New Credits
+- [kxtzownsu](https://github.com/kxtzownsu) - maintaining this fork :D
+
+## Original Credits
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
 - [Archimax](https://github.com/EnterTheVoid-x86) - Cleaning up get_original_data.sh and inshim.sh + README changes
 - [r58Playz](https://github.com/r58Playz) - General bash script improvements
