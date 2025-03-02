@@ -39,10 +39,19 @@ Now, to modify the shim with the generated PKIMetadata:
 Now boot the shim, and ICARUS will attempt to modify your stateful partition.
 
 ### Server setup
+Linux, macOS (not tested)
 Requirements: npm, node  
+cd into icarus
+
 Run `make start-server` to start your proxy, then continue with the instructions below.
 
-Do not use WSL to host a server!
+Windows:
+
+Run
+
+``docker pull appleflyer/icarus-server``
+``docker run -it -p 0.0.0.0:8126:8126 appleflyer/icarus-server``
+
 
 ## Setup and installation instructions, continued
 Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
@@ -55,7 +64,6 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 Get a board specific prebuilt from:
 - ~~[Darkn's Host](https://darkn.bio/notice)~~
 - [Fanqyxl's Host](https://dl.fanqyxl.net)
-- [Kxtz's Host](https://dl.kxtz.dev)
 
 Flash it using [CRU](https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en), [Rufus](https://rufus.ie), or [Balena Etcher](https://etcher.balena.io/) onto your USB.
 
@@ -72,7 +80,6 @@ Many people have been getting re-enrolled after a reboot or powerwash. Until htt
 - Build yourself a shim or get yourself a prebuilt from
 ~~- [Darkn's Host](https://darkn.bio/notice)~~
 - [Fanqyxl's Host](https://dl.fanqyxl.net)
-- [Kxtz's Host](https://dl.kxtz.dev)
 - Flash it onto your USB.
 - Boot into sh1mmer and click "deprovision device"
 - Reboot your chromebook and enable dev mode.
