@@ -44,7 +44,7 @@ function readServerConfig(address, config) {
       return require(filterPath).filter;
     }
     else if (config.filters) {
-      
+
       return function ({tls}) {
         if (tls) {
           return config.filters.includes('https');
@@ -74,13 +74,13 @@ function readServerConfig(address, config) {
           port: parseInt(x.port)
         });
         clientsock.pipe(as);
-        
+
       }
     }
-    
+
   }
 
-  const configData = {filter: defaultServerFilterGetter, proxy: defaultServerProxyGetter, config};
+  const configData = {filter: defaultServerFilterGetter(), proxy: defaultServerProxyGetter(), config};
   return configData;
 }
 function getAllServerConfigs() {
@@ -126,7 +126,8 @@ server.on('connection', (clientToProxySocket) => {
                             .split('CONNECT ')[1]
                             .split(' ')[0].split(':')[0];
         // console.log(serverAddress);
-        
+  // console.log(data.toString());
+
       } else {
          // Parsing HOST from HTTP
          serverAddress = data.toString()
@@ -135,8 +136,9 @@ server.on('connection', (clientToProxySocket) => {
          path = firstLine.split(' ')[1];
         //  console.log(serverAddress);
       }
-      console.log(serverAddress);
-      console.log(isTLSConnection);
+      console.log("// HANDLING REQUEST \\")
+      console.log("Server Address: " + serverAddress);
+      console.log("Is TLS (HTTPS) connection: " + isTLSConnection);
       var isFiltered = false;
       var using = null;
       Object.keys(serverCallbackMap).forEach((v)=>{
@@ -150,12 +152,11 @@ server.on('connection', (clientToProxySocket) => {
             host: serverAddress,
             path: path
           });
-          // console.log(isFiltered);
         }
       })
-      console.log(isFiltered);
+      console.log("Is filtered? " + isFiltered + "\n\n");
       if (isFiltered) {
-        serverCallbackMap[using].proxy()(serverCallbackMap[using].config, clientToProxySocket);
+        serverCallbackMap[using].proxy(serverCallbackMap[using].config, clientToProxySocket);
         return;
       }
       let proxyToServerSocket = net.createConnection({
@@ -165,15 +166,15 @@ server.on('connection', (clientToProxySocket) => {
         // console.log('PROXY TO SERVER SET UP');
         if (isTLSConnection) {
           //Send Back OK to HTTPS CONNECT Request
-          clientToProxySocket.write('HTTP/1.1 200 OK\r\n\n');
+          clientToProxySocket.write('HTTP/1.1 200 Connection Established\r\n\r\n');
         } else {
           proxyToServerSocket.write(data);
         }
-        
+
         // Piping the sockets
         clientToProxySocket.pipe(proxyToServerSocket);
         proxyToServerSocket.pipe(clientToProxySocket);
-        
+
         proxyToServerSocket.on('error', (err) => {
           // console.log('PROXY TO SERVER may have disconnected.');
           // console.log(err);
@@ -194,7 +195,7 @@ server.on('error', (err) => {
 server.on('close', () => {
   console.log('Client Disconnected');
 });
-server.listen(8126, () => {
-  console.log('Server running at http://localhost:' + 8126);
+server.listen(8126, '0.0.0.0', () => {
+  console.log('Server running at http://0.0.0.0:' + 8126);
 });
 //Source code below is for creating a mini server or a server that serves requests within memory.(or not)

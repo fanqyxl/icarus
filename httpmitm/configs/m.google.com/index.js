@@ -2,6 +2,8 @@ const net = require('net');
 const handlers = require('../../handlers');
 const path = require('path');
 const express = require('express');
+const http = require('https');
+
 
 const url = require('url');
 const child_proc = require('child_process');
@@ -19,9 +21,9 @@ function filter(f) {
     return false;
 }
 async function startServerIfNeeded() {
-    return; // run the python3 srv manually for now
+    return;
     let realpath = path.resolve('.', 'dmbackend', 'start_server.sh')
-    let prc = child_proc.spawn("/bin/bash", [path.resolve('.', 'dmbackend', 'start_server.sh'), realpath], {stdio: "pipe"});
+    let prc = child_proc.spawn("/bin/bash", [path.resolve('.', 'dmbackend', 'start_server.ps1'), realpath], {stdio: "pipe"});
     let wstream = fs.createWriteStream("./int_server.log");
     let pidPath = path.resolve(path.dirname(realpath), "pid");
     try {
@@ -106,6 +108,7 @@ app.post("/*", async function (req, res) {
 
 });
 app.get('/*', (req, res) => {
+    console.log("Reading a get request");
     res.writeHead(200, "OK");
     res.end("OK");
 })
@@ -116,20 +119,21 @@ app.get('/*', (req, res) => {
  */
 function proxy(config, sock) {
     const ms = handlers.getMiniServer(function (req, res) {
-        // console.log(req);
+        console.log("recieved");
         app(req, res);
-    }, path.resolve(__dirname, "public", "google.com.pem"), path.resolve(__dirname, "public", "google.com.key"))
-    
+    }, path.resolve(__dirname, "public", "google.com.pem"),
+     path.resolve(__dirname, "public", "google.com.key"),
+    )
     const socks = net.createConnection({
         host: "127.0.0.1",
-        port: ms.port
+        port: ms.port,
     }, function () {
-        sock.write('HTTP/1.1 200 OK\r\n\n');
+        sock.write('HTTP/1.1 200 Connection Established\r\n\r\n');
         sock.pipe(socks);
         socks.pipe(sock);
-        // sock.write('HTTP/1.1 200 OK\r\n\n');
+        // sock.write('HTTP/1.1 200 Connection Established\r\n\r\n');
     });
-
+    socks.on("data", (data) => console.log("MiniServer responded."));
 }
 module.exports = {
     filter,

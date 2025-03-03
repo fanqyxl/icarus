@@ -1,3 +1,4 @@
+
 const net = require('net')
 const https = require('https')
 const proc = require('process')
@@ -14,16 +15,18 @@ class MiniServer {
     internalServer;
     expressApp;
     port;
-    constructor(hand,cert, key, port = MiniServer.pInitial++) {
+    constructor(hand,cert,key, port = MiniServer.pInitial++) {
         // console.log(hand.toString());
         // console.debug("miniserver creating")
         // console.log(port)
         this.internalServer = https.createServer({
             cert: fs.readFileSync(cert),
-            key: fs.readFileSync(key),
-            
+            key: fs.readFileSync(key, 'utf-8'),
+            passphrase: 'icarus',
         }, hand);
-        this.internalServer.listen(port);
+        this.internalServer.listen(port, () => {
+        	// console.debug(`MiniServer is running on port ${port}`);
+        });
         this.port = port;
     }
 }
