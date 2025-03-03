@@ -108,5 +108,6 @@ Many people have been getting re-enrolled after a reboot or powerwash. Until htt
 - [Archimax](https://github.com/EnterTheVoid-x86) - Cleaning up get_original_data.sh and inshim.sh + README changes
 - [r58Playz](https://github.com/r58Playz) - General bash script improvements
 - [Akane](https://github.com/genericness) - Help with SSL, general advice, and README changes
-- [fanqyxl](https://github.com/fanqyxl) - new maintainer
+- [Fanqyxl](https://github.com/fanqyxl) - new maintainer
 - [kxtzownsu](https://github.com/kxtzownsu) - README rewrite + rolled keys
+- [kxtzownsu](https://github.com/cosmicdevv) - Helping out, rewriting code
