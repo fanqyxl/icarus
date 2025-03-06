@@ -19,5 +19,10 @@ build-packed-data:
 	make setup-python
 clean:
 	rm -rf out/
-start-server:
+start-server: start-httpmitm
+
+start-httpmitm:
 	cd httpmitm; npm install; node proxy.js
+
+start-dmbackend:
+	bash httpmitm/dmbackend/start_server.sh
