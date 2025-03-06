@@ -4,3 +4,4 @@ gen
 original
 out
 *pb2.py
+myCA-ignore.*
