@@ -22,7 +22,7 @@ clean:
 start-server: start-httpmitm
 
 start-httpmitm:
-	cd httpmitm; npm install; node proxy.js
+	cd httpmitm; bash start-proxy.sh 
 
 start-dmbackend:
 	bash httpmitm/dmbackend/start_server.sh
