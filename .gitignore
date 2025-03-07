@@ -5,3 +5,5 @@ original
 out
 *pb2.py
 myCA.*
+*.bin
+*.bin.old
