@@ -12,15 +12,13 @@ Clone the repo with ``git clone --recursive https://git.kxtz.dev/kxtzownsu/icaru
 
 Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
-- `make setup-venv`
-- `make enter-venv`
-- `make setup-python`
+- `make venv`
 - `make build-packed-data`
+- `make ca-keys`
 
-Before continuing, open Chrome on your build machine and go to chrome://components. Press CTRL + F and search for "PKIMetadata". Once you find it, press "Check for Updates". Make sure it says up-to-date before continuing (and that the version is below 2000.)
+Before continuing, open Chrome on your build machine and go to chrome://components. Press CTRL + F and search for "PKIMetadata". Once you find it, press "Check for Updates". Make sure it says up-to-date before continuing (and that the version is below 9999.)
   
-- `bash get_original_data.sh`
-- `bash make_out.sh myCA.der`
+- `bash create_out.sh myCA.der`
 
 After doing this the output directory (from here on reffered to as PKIMetadata) will be generated, which is the custom Certificate Authority.
 
@@ -56,12 +54,6 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
   
   - Make sure your device and the server are connected to the same network
   - If that didn't work, powerwash your device and re-run the modified shim, and keep the server running.
-</details>
-
-<details>
-  <summary>make_out.sh is prompting me for a password!</summary>
-
-  The password is 'icarus' without quotes.
 </details>
 
 ## New Credits

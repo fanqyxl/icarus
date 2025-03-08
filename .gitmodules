@@ -1,4 +1,9 @@
 [submodule "httpmitm"]
 	path = httpmitm
+	url = https://git.kxtz.dev/kxtzownsu/Icarus-Lite.git
+	branch = main
+
+[submodule "httpmitm-old"]
+	path = httpmitm-old
 	url = https://git.kxtz.dev/kxtzownsu/httpmitm.git
 	branch = main
