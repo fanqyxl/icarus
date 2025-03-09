@@ -5,4 +5,5 @@ if [ ! -e "${SCRIPT_DIR}/../.venv" ]; then
 fi
 source ${SCRIPT_DIR}/../.venv/bin/activate
 pip3 install protobuf
+make setup-python
 bash
