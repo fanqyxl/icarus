@@ -1,5 +1,5 @@
 #!/bin/bash
-
+SCRIPT_DIR=$(readlink -f "$(dirname "$0")")
 
 # Copyright 2019 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
@@ -87,10 +87,11 @@ mkdir -p "$MOUNT_DIR"/usr/bin
 umount "$MOUNT_DIR"
 enable_rw_mount "$LOOP_DEV"p3
 mount "$LOOP_DEV"p3 "$MOUNT_DIR"
-cp "inshim.sh" "$MOUNT_DIR/usr/sbin/factory_install.sh"
+cp "$SCRIPT_DIR/scripts/inshim.sh" "$MOUNT_DIR/usr/sbin/factory_install.sh"
 chmod +x "$MOUNT_DIR/usr/sbin/factory_install.sh"
 
 umount "$MOUNT_DIR"
+losetup -D
 sync
 sync
 sync

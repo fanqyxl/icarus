@@ -1,0 +1,3 @@
+[submodule "httpmitm"]
+	path = httpmitm
+	url = https://git.kxtz.dev/kxtzownsu/Icarus-Lite.git

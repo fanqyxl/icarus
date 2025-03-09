@@ -7,24 +7,28 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 > ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.<br><br>
 > ONLY SELF HOST ICARUS, NEVER USE A PUBLIC SERVER!
 
+<!--
+> [!IMPORTANT]
+> You won't be able to use pre-built shims with this! You'd need to make new shims with ***your CA certificates***!
+ If you want to use my (kxtz) shims, pass `--bypass` to the start.sh script below!
+-->
+
 ## Setup and installation instructions
 Clone the repo with ``git clone --recursive https://git.kxtz.dev/kxtzownsu/icarus/` and change directory to it.
 
 Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
-- `make venv`
 - `make build-packed-data`
-- `make ca-keys`
 
 Before continuing, open Chrome on your build machine and go to chrome://components. Press CTRL + F and search for "PKIMetadata". Once you find it, press "Check for Updates". Make sure it says up-to-date before continuing (and that the version is below 9999.)
   
-- `bash create_out.sh myCA.der`
+- `bash scripts/create_out.sh myCA.der`
 
 After doing this the output directory (from here on reffered to as PKIMetadata) will be generated, which is the custom Certificate Authority.
 
 Now, to modify the shim with the generated PKIMetadata:
 
-- `bash modify.sh <shim path>`
+- `sudo bash modify.sh <shim path>`
 
 Now boot the shim, and Icarus will attempt to modify your stateful partition.
 
@@ -58,6 +62,7 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 
 ## New Credits
 - [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys, maintaining this fork :D
+- [cosmicdevv](https://github.com/cosmicdevv) - creating icarus lite
 
 ## Original Credits
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
