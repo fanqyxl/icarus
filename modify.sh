@@ -74,7 +74,6 @@ echo "Script Developer: jeffplays1292@gmail.com"
 
 echo "This tool will modify your shim. There is a chance this tool will render it useless. This tool is in BETA. DO NOT SHARE THIS TOOL! "
 echo "It is recommended to make a backup of your shim before continuing (Press ctrl-c in 5 seconds to stop this tool and make a backup)"
-sleep 5
 
 losetup -fP "$1"
 echo "Using loop dev at $LOOP_DEV"
