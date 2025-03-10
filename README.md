@@ -14,7 +14,7 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 -->
 
 ## Setup and installation instructions
-Clone the repo with ``git clone --recursive https://git.kxtz.dev/kxtzownsu/icarus/` and change directory to it.
+Clone the repo with `git clone --recursive https://git.kxtz.dev/kxtzownsu/icarus/` and change directory to it.
 
 Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
