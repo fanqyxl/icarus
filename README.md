@@ -7,14 +7,8 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 > ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.<br><br>
 > ONLY SELF HOST ICARUS, NEVER USE A PUBLIC SERVER!
 
-<!--
-> [!IMPORTANT]
-> You won't be able to use pre-built shims with this! You'd need to make new shims with ***your CA certificates***!
- If you want to use my (kxtz) shims, pass `--bypass` to the start.sh script below!
--->
-
 ## Setup and installation instructions
-Clone the repo with ``git clone --recursive https://git.kxtz.dev/kxtzownsu/icarus/` and change directory to it.
+Clone the repo with `git clone --recursive https://git.kxtz.dev/kxtzownsu/icarus/` and change directory to it.
 
 Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
@@ -26,7 +20,7 @@ Before continuing, open Chrome on your build machine and go to chrome://componen
 
 After doing this the output directory (from here on reffered to as PKIMetadata) will be generated, which is the custom Certificate Authority.
 
-Now, to modify the shim with the generated PKIMetadata:
+Now, to modify the shim with the generated PKIMetadata (THIS WILL OVERWRITE YOUR SHIM) :
 
 - `sudo bash modify.sh <shim path>`
 
@@ -34,9 +28,10 @@ Now boot the shim, and Icarus will attempt to modify your stateful partition.
 
 ### Server setup
 Requirements: npm, node  
+Linux:
 Run `make start-server` to start your proxy, then continue with the instructions below.
-
-Do not use WSL to host a server!
+Windows:
+GET A PREBUILT FROM THE RELEASES TAB, AND RUN IT.
 
 ## Setup and installation instructions, continued
 Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
@@ -46,13 +41,6 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 - Resume setup and your device will unenroll. 
 
 ## Troubleshooting
-
-<details>
-  <summary>During building, everything starting from root was copied into original!</summary>
-
-  Please run ``git pull`` on your local copy. This bug has been fixed.
-</details>
-
 <details>
   <summary>My device says "Can't reach Google"!</summary>
   
@@ -61,8 +49,9 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 </details>
 
 ## New Credits
-- [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys, maintaining this fork :D
+- [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys
 - [cosmicdevv](https://github.com/cosmicdevv) - creating icarus lite
+- [fanqyxl](https://github.com/fanqyxl) - maintaining repo, emotional support, testing :3 
 
 ## Original Credits
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
