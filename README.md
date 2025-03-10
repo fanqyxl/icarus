@@ -1,7 +1,7 @@
 # Icarus
 An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.  
 
-### warning
+### WARNING
 > [!IMPORTANT]
 > DO NOT USE ANY PUBLIC IP ADDRESSES FOR ICARUS AS A PROXY, YOU WILL RISK YOUR DATA and YOU WILL BE REMOTELY COMPROMISED.<br><br>
 > ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.<br><br>
