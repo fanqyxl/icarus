@@ -33,7 +33,7 @@ format_part_number() {
 	echo "$2"
 }
 
-mount /dev/disk/by-label/STATE /mnt/stateful_partition/
+mount /dev/disk/by-label/ICARUS /mnt/stateful_partition/
 cros_dev="$(get_largest_cros_blockdev)"
 if [ -z "$cros_dev" ]; then
     echo "No CrOS SSD found on device. Failing."
