@@ -66,7 +66,8 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 ## New Credits
 - [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys, rewriting bash scripts
 - [cosmicdevv](https://github.com/cosmicdevv) - creating icarus lite
-- [fanqyxl](https://github.com/fanqyxl) - maintaining repo, emotional support, testing :3 
+- [fanqyxl](https://github.com/fanqyxl) - maintaining repo, emotional support, testing :3
+- [AC3](https://github.com/AC3GT) - helping in times of depression and desperate needs 
 
 ## Original Credits
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
