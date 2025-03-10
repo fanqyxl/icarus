@@ -90,6 +90,8 @@ cp "$SCRIPT_DIR/scripts/inshim.sh" "$MOUNT_DIR/usr/sbin/factory_install.sh"
 chmod +x "$MOUNT_DIR/usr/sbin/factory_install.sh"
 
 umount "$MOUNT_DIR"
+e2label "$LOOP_DEV"p3 ICARUS
+
 losetup -D
 sync
 sync
