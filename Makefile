@@ -14,7 +14,6 @@ setup-python:
 build-packed-data:
 	mkdir -p out/PKIMetadata
 	make venv
-	make setup-python
 
 ca-keys:
 	cd httpmitm; bash generate_certs.sh

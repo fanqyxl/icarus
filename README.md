@@ -17,7 +17,7 @@ FLASH IT TO YOUR USB USING RUFUS, BALENAETCHER, OR CHROMEBOOK RECOVERY UTILITY
 
 FOLLOW THE SERVER SETUP INSTRUCTIONS
 ## Setup and installation instructions
-Clone the repo with `git clone --recursive https://github.com/fanqyxl/icarus` and change directory to it.
+Clone the repo with `git clone --recursive https://git.kxtz.dev/kxtzownsu/icarus/` and change directory to it.
 
 Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
