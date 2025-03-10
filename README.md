@@ -9,7 +9,7 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 > -UNRETAINED
 ## REQUIREMENTS
 * KV4 OR LOWER CHROMEBOOK
-* V127 - V125 (YOU CAN DOWNGRADE USING IMAGES @ https://chrome.fanqyxl.net)
+* V127 - V125 (YOU CAN DOWNGRADE USING IMAGES @ https://chrome100.dev)
 * A USB DRIVE
 ## USING PREBUILTS
 GET A PREBUILT @ [MY FILE HOST](https://dl.fanqyxl.net/ChromeOS/Prebuilts/Icarus) OR [KXTZ'S FILE HOST](https://dl.kxtz.dev)
@@ -44,13 +44,6 @@ Run `make start-server` to start your proxy, then continue with the instructions
 Windows:
 GET A PREBUILT FROM THE RELEASES TAB, AND RUN IT.
 
-## USING MY PUBLIC SERVER
-AGAIN, PLEASE SELF HOST. THIS IS ONLY IF YOU HAVE NO OTHER CHOICE!!
-
-IP: 72.80.65.133
-
-PORT: 8126
-
 ## Setup and installation instructions, continued
 Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
 
@@ -71,7 +64,7 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 * FOR HELP, YOU CAN PING ME IN MY [DISCORD SERVER](discord.gg/FF6Evz2gwr) OR TN. SAME FOR KXTZ AND COSMIC
 
 ## New Credits
-- [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys
+- [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys, rewriting bash scripts
 - [cosmicdevv](https://github.com/cosmicdevv) - creating icarus lite
 - [fanqyxl](https://github.com/fanqyxl) - maintaining repo, emotional support, testing :3 
 
