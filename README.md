@@ -36,13 +36,13 @@ Now, to modify the shim with the generated PKIMetadata (THIS WILL OVERWRITE YOUR
 Now boot the shim, and Icarus will attempt to modify your stateful partition.
 
 ### Server setup
-Requirements: npm, node  
+Requirements: python3
 
-Linux:
+> [!IMPORTANT]
+> Windows users need to use the exe file in the [releases](https://github.com/fanqyxl/icarus/releases) tab, then skip to [Setup and installation instructions, continued](https://github.com/fanqyxl/icarus?tab=readme-ov-file#setup-and-installation-instructions-continued) below
+
+**The rest of the server setup instructions here will assume you're running native Linux, not WSL, not Crostini / Linux on ChromeOS.***
 Run `make start-server` to start your proxy, then continue with the instructions below.
-
-Windows:
-GET A PREBUILT FROM THE RELEASES TAB, AND RUN IT.
 
 ## Setup and installation instructions, continued
 Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
