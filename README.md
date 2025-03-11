@@ -41,7 +41,8 @@ Requirements: python3
 > [!IMPORTANT]
 > Windows users need to use the exe file in the [releases](https://github.com/fanqyxl/icarus/releases) tab, then skip to [Setup and installation instructions, continued](https://github.com/fanqyxl/icarus?tab=readme-ov-file#setup-and-installation-instructions-continued) below
 
-**The rest of the server setup instructions here will assume you're running native Linux, not WSL, not Crostini / Linux on ChromeOS.***
+***The rest of the server setup instructions here will assume you're running native Linux, not WSL, not Crostini / Linux on ChromeOS.***
+
 Run `make start-server` to start your proxy, then continue with the instructions below.
 
 ## Setup and installation instructions, continued
