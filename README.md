@@ -61,7 +61,8 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 
 ## HELP PLEASE
 * PLEASE DONT ANNOY WRITABLE/UNRETAINED FOR HELP OR DM ME, KXTZ, OR COSMICDEV
-* FOR HELP, YOU CAN PING ME IN MY [DISCORD SERVER](discord.gg/FF6Evz2gwr) OR TN. SAME FOR KXTZ AND COSMIC
+* FOR HELP, YOU CAN PING ME IN MY [DISCORD SERVER](https://discord.gg/FF6Evz2gwr). SAME FOR COSMIC
+* YOU CAN ALSO GET HELP IN [TITANIUM NETWORK](https://discord.gg/unblock), PING ME OR COSMIC IN THE ICARUS REVIVED KAJIG!
 
 ## New Credits
 - [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys, rewriting bash scripts
