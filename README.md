@@ -11,19 +11,44 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 * KV4 OR LOWER CHROMEBOOK
 * V127 - V125 (YOU CAN DOWNGRADE USING IMAGES @ https://chrome100.dev)
 * A USB DRIVE
-## USING PREBUILTS
-GET A PREBUILT @ [MY FILE HOST](https://dl.fanqyxl.net/ChromeOS/Prebuilts/Icarus) OR [KXTZ'S FILE HOST](https://dl.kxtz.dev)
-FLASH IT TO YOUR USB USING RUFUS, BALENAETCHER, OR CHROMEBOOK RECOVERY UTILITY
 
-FOLLOW THE SERVER SETUP INSTRUCTIONS
-## Setup and installation instructions
+## USING PREBUILTS
+* GET A PREBUILT @ [MY FILE HOST](https://dl.fanqyxl.net/ChromeOS/Prebuilts/Icarus) OR [KXTZ'S FILE HOST](https://dl.kxtz.dev)
+* FLASH IT TO YOUR USB USING RUFUS, BALENAETCHER, OR CHROMEBOOK RECOVERY UTILITY
+* BOOT THE SHIM
+* FOLLOW THE SERVER SETUP INSTRUCTIONS
+
+**The rest of the server setup instructions here will assume you're running native Linux, not WSL, not Crostini / Linux on ChromeOS, as it is not supported**
+
+## Server setup
+Requirements: python3
+
+> [!IMPORTANT]
+> Windows users need to use the exe file in the [releases](https://github.com/fanqyxl/icarus/releases) tab, then skip to [Setup and installation instructions, continued](https://github.com/fanqyxl/icarus?tab=readme-ov-file#Server-instructions) below
+
+Run `git clone https://github.com/fanqyxl/icarus/`
+Cd into the icarus directory
+Run `make start-server` to start your proxy, then continue with the instructions below.
+
+## Server instructions
+Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
+
+- Set proxy settings to manual
+- Set HTTPS IP to the IP you used to host the proxy server. 
+- Resume setup and your device will unenroll. 
+
+## Making your own shims
+Requirements: 
+> Linux based machine (wsl wont work, VMs will, crostini also wont work)
+> Chrome Installed
+
 Clone the repo with `git clone --recursive https://github.com/fanqyxl/icarus` and change directory to it.
 
-Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
+Set up the environment by running the following commands (Make sure you have python3, python3-venv, protobuf, and chrome installed beforehand):
 
 - `make build-packed-data`
 
-Before continuing, open Chrome on your build machine and go to chrome://components. Press CTRL + F and search for "PKIMetadata". Once you find it, press "Check for Updates". Make sure it says up-to-date before continuing (and that the version is below 9999.)
+Before continuing, open Chrome on the machine your building shims on and go to chrome://components. Press CTRL + F and search for "PKIMetadata". Once you find it, press "Check for Updates". Make sure it says up-to-date before continuing (and that the version is below 9999.)
   
 - `bash scripts/create_out.sh myCA.der`
 
@@ -35,22 +60,6 @@ Now, to modify the shim with the generated PKIMetadata (THIS WILL OVERWRITE YOUR
 
 Now boot the shim, and Icarus will attempt to modify your stateful partition.
 
-### Server setup
-Requirements: python3
-
-> [!IMPORTANT]
-> Windows users need to use the exe file in the [releases](https://github.com/fanqyxl/icarus/releases) tab, then skip to [Setup and installation instructions, continued](https://github.com/fanqyxl/icarus?tab=readme-ov-file#setup-and-installation-instructions-continued) below
-
-***The rest of the server setup instructions here will assume you're running native Linux, not WSL, not Crostini / Linux on ChromeOS.***
-
-Run `make start-server` to start your proxy, then continue with the instructions below.
-
-## Setup and installation instructions, continued
-Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
-
-- Set proxy settings to manual
-- Set HTTPS IP to the IP you used to host the proxy server. 
-- Resume setup and your device will unenroll. 
 
 ## Troubleshooting
 <details>
@@ -63,7 +72,7 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 ## HELP PLEASE
 * PLEASE DONT ANNOY WRITABLE/UNRETAINED FOR HELP OR DM ME, KXTZ, OR COSMICDEV
 * FOR HELP, YOU CAN PING ME IN MY [DISCORD SERVER](https://discord.gg/FF6Evz2gwr). SAME FOR COSMIC
-* YOU CAN ALSO GET HELP IN [TITANIUM NETWORK](https://discord.gg/unblock), PING ME OR COSMIC IN THE ICARUS REVIVED KAJIG!
+* YOU CAN ALSO GET HELP IN [TITANIUM NETWORK](https://discord.gg/unblock), PING ME OR COSMIC IN THE ICARUS REVIVED KAJIG
 
 ## New Credits
 - [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys, rewriting bash scripts
