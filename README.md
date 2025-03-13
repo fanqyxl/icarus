@@ -11,9 +11,10 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 * KV4 OR LOWER CHROMEBOOK
 * V127 - V125 (YOU CAN DOWNGRADE USING IMAGES @ https://chrome100.dev)
 * A USB DRIVE
+* A NON KEYROLLED CHROMEBOOK (SHIMS REQUIRED!!)
 
 ## USING PREBUILTS
-* GET A PREBUILT @ [MY FILE HOST](https://dl.fanqyxl.net/ChromeOS/Prebuilts/Icarus) OR [KXTZ'S FILE HOST](https://dl.kxtz.dev)
+* GET A PREBUILT FROM [MY FILE HOST](https://dl.fanqyxl.net/ChromeOS/Prebuilts/Icarus)
 * FLASH IT TO YOUR USB USING RUFUS, BALENAETCHER, OR CHROMEBOOK RECOVERY UTILITY
 * BOOT THE SHIM
 * FOLLOW THE SERVER SETUP INSTRUCTIONS
