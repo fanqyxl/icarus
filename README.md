@@ -28,7 +28,9 @@ Requirements: python3
 > Windows users need to use the exe file in the [releases](https://github.com/fanqyxl/icarus/releases) tab, then skip to [Setup and installation instructions, continued](https://github.com/fanqyxl/icarus?tab=readme-ov-file#Server-instructions) below
 
 Run `git clone https://github.com/fanqyxl/icarus/`
+
 Cd into the icarus directory
+
 Run `make start-server` to start your proxy, then continue with the instructions below.
 
 ## Server instructions
