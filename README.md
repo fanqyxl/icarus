@@ -1,6 +1,8 @@
 # Icarus
 An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.  
 
+## For EOL boards (e.g: relm, banon), please use [SH1mmer](https://github.com/MercuryWorkshop/sh1mmer?tab=readme-ov-file#how-do-i-use-it) instead of anything else.
+
 ### WARNING
 > [!IMPORTANT]
 > DO NOT USE ANY PUBLIC IP ADDRESSES FOR ICARUS AS A PROXY, YOU WILL RISK YOUR DATA and YOU WILL BE REMOTELY COMPROMISED.<br><br>
