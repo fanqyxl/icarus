@@ -40,6 +40,7 @@ if [ -z "$cros_dev" ]; then
     sleep 1d
 fi
 stateful=$(format_part_number "$cros_dev" 1)
+umount "$stateful"
 mkfs.ext4 -F "$stateful" || fail "Failed to wipe stateful." # This only wipes the stateful partition 
 mount "$stateful" /tmp || fail "Failed to mount stateful."
 mkdir -p /tmp/unencrypted
