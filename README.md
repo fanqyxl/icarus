@@ -76,8 +76,8 @@ Now boot the shim, and Icarus will attempt to modify your stateful partition.
 
 ## HELP PLEASE
 * PLEASE DONT ANNOY WRITABLE/UNRETAINED FOR HELP OR DM ME, KXTZ, OR COSMICDEV
-* FOR HELP, YOU CAN PING ME IN MY [DISCORD SERVER](https://discord.gg/FF6Evz2gwr). SAME FOR COSMIC
-* YOU CAN ALSO GET HELP IN [TITANIUM NETWORK](https://discord.gg/unblock), PING ME OR COSMIC IN THE ICARUS REVIVED KAJIG
+* FOR HELP, YOU CAN TALK IN MY [DISCORD SERVER](https://discord.gg/FF6Evz2gwr). 
+* YOU CAN ALSO GET HELP IN [TITANIUM NETWORK](https://discord.gg/unblock),PLEASE DONT PING ME OR COSMIC IN THE ICARUS REVIVED KAJIG
 
 ## New Credits
 - [kxtzownsu](https://github.com/kxtzownsu) - rolling ssl keys, rewriting bash scripts
