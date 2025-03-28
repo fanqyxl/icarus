@@ -13,7 +13,7 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 * KV4 OR LOWER CHROMEBOOK
 * V127 - V125 (YOU CAN DOWNGRADE USING IMAGES @ https://chrome100.dev)
 * A USB DRIVE
-* A NON KEYROLLED CHROMEBOOK (SHIMS REQUIRED!!)
+* A NON KEYROLLED CHROMEBOOK (IF YOU DO HAVE A KEYROLLED CHROMEBOOK, VISIT [BADAPPLE-ICARUS](https://github.com/applefritter-inc/BadApple-icarus))
 
 ## USING PREBUILTS
 * GET A PREBUILT FROM [MY FILE HOST](https://dl.fanqyxl.net/ChromeOS/Prebuilts/Icarus)
