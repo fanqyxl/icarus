@@ -29,7 +29,7 @@ Requirements: python3
 > [!IMPORTANT]
 > Windows users need to use the exe file in the [releases](https://github.com/fanqyxl/icarus/releases) tab, then skip to [Setup and installation instructions, continued](https://github.com/fanqyxl/icarus?tab=readme-ov-file#Server-instructions) below
 
-Run `git clone https://github.com/fanqyxl/icarus/`
+Run `git clone --recursive https://github.com/fanqyxl/icarus/`
 
 Cd into the icarus directory
 
