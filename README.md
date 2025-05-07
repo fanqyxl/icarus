@@ -1,3 +1,4 @@
+> Use this website, it's more skid-friendly guide https://icarus.t3rm1n4l.dev (and looks cool)
 # Icarus
 An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.  
 
