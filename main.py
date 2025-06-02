@@ -34,13 +34,13 @@ GLOBAL VARIABLES
 """
 version = "1.1.13"
 pInitial = 3001 # The port that MiniServers will start up from.
-latestVersionUrl = "https://raw.githubusercontent.com/cosmicdevv/Icarus-Lite/refs/heads/main/version.txt" # URL of the file where the latest version number is stored
+latestVersionUrl = "https://ddl.fanqyxl.net/api/v1/download?path=%2FScripts%2FIcarus%2Fversion.txt" # URL of the file where the latest version number is stored
 scriptUrl = "https://ddl.fanqyxl.net/api/v1/download?path=%Scripts%Icarus%%2Fmain.py" # URL of the file where the latest script version is stored
 sslCerts = {
-    "google.com.key": "https://git.kxtz.dev/kxtzownsu/Icarus-Lite/raw/branch/main/certs/google.com.key",
-    "google.com.pem": "https://git.kxtz.dev/kxtzownsu/Icarus-Lite/raw/branch/main/certs/google.com.pem",
-    "myCA.pem": "https://git.kxtz.dev/kxtzownsu/Icarus-Lite/raw/branch/main/myCA.pem",
-    "myCA.key": "https://git.kxtz.dev/kxtzownsu/Icarus-Lite/raw/branch/main/myCA.key"
+    "google.com.key": "https://ddl.fanqyxl.net/api/v1/download?path=%2FChromeOS%2FPrebuilts%2FIcarus%2FIcarus-Certs%2Fgoogle.com.key",
+    "google.com.pem": "https://ddl.fanqyxl.net/api/v1/download?path=%2FChromeOS%2FPrebuilts%2FIcarus%2FIcarus-Certs%2Fgoogle.com.pem",
+    "myCA.pem": "https://ddl.fanqyxl.net/api/v1/download?path=%2FChromeOS%2FPrebuilts%2FIcarus%2FIcarus-Certs%2FmyCA.pem",
+    "myCA.key": "https://ddl.fanqyxl.net/api/v1/download?path=%2FChromeOS%2FPrebuilts%2FIcarus%2FIcarus-Certs%2FmyCA.key"
 } # Stores names and links of certificates to download
 certPaths = {} # Stores paths of certificates on the local filesystem
 installationFolder = "icarus" # Folder name that stores certificates
