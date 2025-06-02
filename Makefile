@@ -24,9 +24,3 @@ clean:
 	rm -rf gen
 	rm -rf .venv/
 	rm -rf src/root_store_gen/*_pb2.py
-
-start-server: 
-	bash -c "while tmux has-session -t icarus; do tmux kill-session -t icarus; done"
-	echo "set -g mouse on" > ~/.tmux.conf
-	tmux new -d -s icarus "cd httpmitm; bash start.sh"
-	tmux a -t icarus
