@@ -32,7 +32,7 @@ from dmbackend import device_management_pb2
 """
 GLOBAL VARIABLES
 """
-version = "1.1.13"
+version = "1.2.0"
 pInitial = 3001 # The port that MiniServers will start up from.
 latestVersionUrl = "https://ddl.fanqyxl.net/api/v1/download?path=%2FScripts%2FIcarus%2Fversion.txt" # URL of the file where the latest version number is stored
 scriptUrl = "https://ddl.fanqyxl.net/api/v1/download?path=%Scripts%Icarus%%2Fmain.py" # URL of the file where the latest script version is stored
