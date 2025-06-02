@@ -43,7 +43,7 @@ sslCerts = {
     "myCA.key": "https://git.kxtz.dev/kxtzownsu/Icarus-Lite/raw/branch/main/myCA.key"
 } # Stores names and links of certificates to download
 certPaths = {} # Stores paths of certificates on the local filesystem
-installationFolder = "IcarusLite" # Folder name that stores certificates
+installationFolder = "icarus" # Folder name that stores certificates
 noSupport = False # If user is running with invalid certs, makes the console print extra characters so if I get an Issue on the GitHub and see the characters it means they're using invalid certs and it's on them
 config = {
     "bypassCA": False,
