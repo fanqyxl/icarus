@@ -35,7 +35,7 @@ jobs:
       run: pyinstaller --onefile main.py
 
    
-    - name: 🚀 Upload to “autorelease”
+    - name: upload to releases
       uses: softprops/action-gh-release@v1
       with:
         tag_name: autorelease        
