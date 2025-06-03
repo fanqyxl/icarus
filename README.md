@@ -45,6 +45,10 @@ OTA (Over the Air)
 * Mount The Image Using ```mkdir /icarus && mount /dev/sdX /icarus``` Replacing X With Your USB
 * Now Run ```cd /icarus && ./icarus_ba.sh```
 
+**Keyrolled Dedede Instructions**
+
+* Instructions can be found [here](https://github.com/HarryJarry1/dededeicarus)
+
 **Non Keyrolled Instructions:**
 
 **Requirements:**
