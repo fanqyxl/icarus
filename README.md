@@ -72,7 +72,7 @@ OTA (Over the Air)
 
 **Setup:**
 
-* Clone This Repo Using ```git clone https:github.com/fanqyxl/icarus```
+* Clone This Repo Using ```git clone https://github.com/fanqyxl/icarus```
 * Navigate to The Downloaded Repo Using ```cd icarus```
 * Install Dependencies using ```pip install -r requirements.txt/pip3 install -r requirements.txt```.
 * On Some Distros, pip may not work correctly, so run ```sudo apt install python3-protobuf python3-requests python3-openssl python3-cryptography```
