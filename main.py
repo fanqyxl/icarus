@@ -1,8 +1,7 @@
 """
 Icarus Lite
 Written by cosmicdevv
-Maintained and improved by fanqyxl
-https://github.com/fanqyxl/icarus
+https://github.com/cosmicdevv/Icarus-Lite
 """
 import warnings
 # If on 32 bit Python, ignore Cryptography warnings (they're annoying)
@@ -32,18 +31,18 @@ from dmbackend import device_management_pb2
 """
 GLOBAL VARIABLES
 """
-version = "1.2.0"
+version = "1.1.14"
 pInitial = 3001 # The port that MiniServers will start up from.
-latestVersionUrl = "https://ddl.fanqyxl.net/api/v1/download?path=%2FScripts%2FIcarus%2Fversion.txt" # URL of the file where the latest version number is stored
-scriptUrl = "https://ddl.fanqyxl.net/api/v1/download?path=%Scripts%Icarus%%2Fmain.py" # URL of the file where the latest script version is stored
+latestVersionUrl = "https://raw.githubusercontent.com/cosmicdevv/Icarus-Lite/refs/heads/main/version.txt" # URL of the file where the latest version number is stored
+scriptUrl = "https://raw.githubusercontent.com/cosmicdevv/Icarus-Lite/refs/heads/main/main.py" # URL of the file where the latest script version is stored
 sslCerts = {
-    "google.com.key": "https://ddl.fanqyxl.net/api/v1/download?path=%2FChromeOS%2FPrebuilts%2FIcarus%2FIcarus-Certs%2Fgoogle.com.key",
-    "google.com.pem": "https://ddl.fanqyxl.net/api/v1/download?path=%2FChromeOS%2FPrebuilts%2FIcarus%2FIcarus-Certs%2Fgoogle.com.pem",
-    "myCA.pem": "https://ddl.fanqyxl.net/api/v1/download?path=%2FChromeOS%2FPrebuilts%2FIcarus%2FIcarus-Certs%2FmyCA.pem",
-    "myCA.key": "https://ddl.fanqyxl.net/api/v1/download?path=%2FChromeOS%2FPrebuilts%2FIcarus%2FIcarus-Certs%2FmyCA.key"
+    "google.com.key": "https://raw.githubusercontent.com/cosmicdevv/Icarus-Lite-Certs/refs/heads/main/google.com.key",
+    "google.com.pem": "https://raw.githubusercontent.com/cosmicdevv/Icarus-Lite-Certs/refs/heads/main/google.com.pem",
+    "myCA.pem": "https://raw.githubusercontent.com/cosmicdevv/Icarus-Lite-Certs/refs/heads/main/myCA.pem",
+    "myCA.key": "https://raw.githubusercontent.com/cosmicdevv/Icarus-Lite-Certs/refs/heads/main/myCA.key"
 } # Stores names and links of certificates to download
 certPaths = {} # Stores paths of certificates on the local filesystem
-installationFolder = "icarus" # Folder name that stores certificates
+installationFolder = "IcarusLite" # Folder name that stores certificates
 noSupport = False # If user is running with invalid certs, makes the console print extra characters so if I get an Issue on the GitHub and see the characters it means they're using invalid certs and it's on them
 config = {
     "bypassCA": False,
